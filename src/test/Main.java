@@ -13,6 +13,7 @@ public class Main {
         Dog dog_matilda = new Dog("Female", "Matilda");
         Dog doh_rafael = new Dog("Male", "Rafael");
         Pup pup = doh_rafael.leadOffspring(dog_matilda);
+        pup.getParent().stream().forEach(System.out::println);
         pup.jump();
         pup.sleep();
         pup.woof();

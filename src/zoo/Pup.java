@@ -1,6 +1,7 @@
 package zoo;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * This class allows you to create descendants of dogs - puppies
@@ -62,6 +63,21 @@ public class Pup extends Dog {
         this.setIndexOfSleep(this.getIndexOfSleep() - 2);
         this.setHungerIndex(this.getHungerIndex() - 1);
         info();
+    }
+    /**
+     * Creates a random name for the puppy
+     * @param maleName
+     * @param femaleName
+     * @return newPupName
+     */
+    private String createPupName(String maleName, String femaleName){
+        Random random = new Random();
+        String letters = "abcdefghijklmnopqrstuvwxyz".toUpperCase();
+        String resultName = letters.charAt(random.nextInt(letters.length())) +
+                maleName.substring(random.nextInt(maleName.length() / 2), maleName.length() / 2).toLowerCase() +
+                femaleName.substring(random.nextInt(femaleName.length() / 2), femaleName.length() - 1).toLowerCase();
+        return resultName;
+
     }
     /**
      * The puppy is jumping

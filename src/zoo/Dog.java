@@ -165,8 +165,11 @@ public class Dog extends Animal implements WalkingAnimal, SexualReproduction{
      * @return newPupName
      */
     private String createPupName(String maleName, String femaleName){
-        String resultName = maleName.substring(0, maleName.length() / 2) +
-                femaleName.substring(femaleName.length() / 2, femaleName.length() - 1);
+        Random random = new Random();
+        String letters = "abcdefghijklmnopqrstuvwxyz".toUpperCase();
+        String resultName = letters.charAt(random.nextInt(letters.length())) +
+                maleName.substring(random.nextInt(maleName.length() / 2), maleName.length() / 2).toLowerCase() +
+                femaleName.substring(random.nextInt(femaleName.length() / 2), femaleName.length() - 1).toLowerCase();
         return resultName;
 
     }
